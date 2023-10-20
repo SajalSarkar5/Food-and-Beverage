@@ -49,9 +49,9 @@ const SameBrandDetails = () => {
                                         </div>
                                     </figure>
                                     <div className="card-body">
-                                        <h2 className="card-title">Brand: {item.name}</h2>
-                                        <h4><span> Product Type :</span> {item.type}</h4>
-                                        <p><span>Price: $</span>{item.price}</p>
+                                        <h2 className="card-title"><span className='text-base font-semibold'>Brand : </span> {item.name}</h2>
+                                        <h4><span> <span className='text-base font-semibold'>Product Type</span> : </span> {item.type}</h4>
+                                        <p><span><span className='text-base font-semibold'>Price : </span> $</span>{item.price}</p>
 
 
                                         <div className="flex justify-start items-center gap-5">
@@ -67,10 +67,10 @@ const SameBrandDetails = () => {
                                             </div>
                                         </div>
 
-                                        <p>Description: {item.discription}</p>
+                                        <p><span className='text-base font-semibold'>Description</span> : {item.discription}</p>
                                         <div className="card-actions justify-between pt-3">
                                             <Link to={`/moredetails/${item._id}`}><button className='btn bg-gradient-to-r from-sky-500 to-indigo-500 border-0 text-[#cae9ff] capitalize'>MoreDetails</button></Link>
-                                            <Link to={`/updeddetails/${item._id}`}><button className='btn bg-gradient-to-r from-sky-500 to-indigo-500 border-0 text-[#cae9ff] capitalize'>Upded</button></Link>
+                                            <Link to={`/updeddetails/${item._id}`}><button className='btn bg-gradient-to-r from-sky-500 to-indigo-500 border-0 text-[#cae9ff] capitalize'>Update</button></Link>
                                         </div>
                                     </div>
                                 </div>

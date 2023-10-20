@@ -5,6 +5,7 @@ import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
 import toast from 'react-hot-toast';
 import GoogleLogin from '../components/GoogleLogin';
+import swal from 'sweetalert';
 
 
 const Register = () => {
@@ -26,18 +27,21 @@ const Register = () => {
         const isValidSpacialPassword = /^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).+$/.test(password);
 
         if (password.length < 6) {
-            alert('PLease provide 6 character password')
+            // alert('PLease provide 6 character password')
+            swal("PLease provide 6 character password!", "error");
             // toast.error("PLease provide 6 character password")
             return
         }
 
         if (!isValidCarPassword) {
-            alert('PLease provide capital letter')
+            // alert('PLease provide capital letter')
+            swal("PLease provide capital letter!", "error");
             // toast.error("PLease provide capital letter")
             return
         }
         if (!isValidSpacialPassword) {
-            alert('PLease provide special character')
+            // alert('PLease provide special character')
+            swal("PLease provide special character !", "error");
             // toast.error("PLease provide special character")
             return
         }
