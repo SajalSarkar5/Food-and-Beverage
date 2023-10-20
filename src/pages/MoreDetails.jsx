@@ -52,7 +52,7 @@ const MoreDetails = () => {
                         <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-[#cae9ff] capitalize">
                             <span>Brand : {data.name}</span>
                         </h6>
-                        <h4><span className='text-base font-semibold'>Product Type :</span> {data.type}</h4>
+                        <h4><span className='text-base font-semibold'>Product Type : </span> {data.type}</h4>
                         <p className='py-2'><span className='text-base font-semibold'>Price : $</span>{data.price}</p>
                         
                         <div className="flex justify-start items-center gap-5 pb-2">
