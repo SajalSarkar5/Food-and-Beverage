@@ -8,7 +8,7 @@ const Footer = () => {
             <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
                 <div class="sm:flex sm:items-center sm:justify-between">
                     <div>
-                        <h3 className="text-2xl">Food and Beverage</h3>
+                        <h3 className="text-2xl">Food and <span className="text-cyan-400">Beverage</span></h3>
                     </div>
                     <ul class="flex flex-wrap items-center gap-10 mb-6 text-sm font-medium sm:mb-0 dark:text-gray-400">
                         <Link to="/">

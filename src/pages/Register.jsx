@@ -1,7 +1,21 @@
-import React from 'react';
+
+import { Link } from 'react-router-dom';
 import Header from '../components/Header';
 
 const Register = () => {
+
+    const handleRegister = e => {
+        e.preventDefault();
+        console.log(e.currentTarget)
+        const form = new FormData(e.currentTarget);
+        const name = form.get('name');
+        const photo = form.get('photo');
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(name, photo, email, password);
+    }
+
+
     return (
         <div className="bg-about-us">
             <Header></Header>

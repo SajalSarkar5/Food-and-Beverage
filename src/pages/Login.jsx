@@ -1,7 +1,17 @@
+import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
 
 const Login = () => {
+
+    const handleLogin = e => {
+        e.preventDefault();
+        console.log(e.currentTarget)
+        const form = new FormData(e.currentTarget);
+        console.log(form.get('password'));
+    }
+
+
     return (
         <div className="bg-about-us">
             <Header></Header>

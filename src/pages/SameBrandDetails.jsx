@@ -42,7 +42,7 @@ const SameBrandDetails = () => {
                                 </div>
 
 
-                                <div className="card bg-[#0d3b66] shadow-xl">
+                                <div className="card bg-[#0d3b66] text-[#cae9ff] shadow-xl">
                                     <figure>
                                         <div className='h-[270px]'>
                                             <img className='w-full' src={item.image} alt="" />

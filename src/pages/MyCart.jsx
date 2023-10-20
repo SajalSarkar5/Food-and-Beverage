@@ -38,7 +38,7 @@ const MyCart = () => {
                             return <div className="pb-20">
 
 
-                                <div class="relative flex w-full max-w-[48rem] rounded-xl bg-white bg-clip-border text-gray-700 shadow-md flex-col md:flex-col lg:flex-row">
+                                <div class="relative flex w-full max-w-[48rem] rounded-xl bg-[#0d3b66] bg-clip-border text-gray-700 shadow-md flex-col md:flex-col lg:flex-row">
                                     <div class="relative w-full h-[400px] lg:w-2/5 m-0 overflow-hidden text-gray-700 bg-white rounded-r-none shrink-0 rounded-xl bg-clip-border">
                                         <img
                                             src={item.image}
@@ -46,14 +46,14 @@ const MyCart = () => {
                                             class="object-cover w-full h-full"
                                         />
                                     </div>
-                                    <div class="p-6">
-                                        <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal text-pink-500 uppercase">
-                                            <span>Brand: {item.name}</span>
+                                    <div class="p-6 text-[#cae9ff]">
+                                        <h6 class="block mb-4 font-sans text-base antialiased font-semibold leading-relaxed tracking-normal  capitalize">
+                                            <span className='text-base font-semibold'>Brand : {item.name}</span>
                                         </h6>
-                                        <h4><span>Product Type :</span> {item.type}</h4>
-                                        <p><span>Price : $</span>{item.price}</p>
+                                        <h4 className="py-2"><span className='text-base font-semibold'>Product Type :</span> {item.type}</h4>
+                                        <p><span className='text-base font-semibold'>Price : $</span>{item.price}</p>
 
-                                        <div className="flex justify-start items-center gap-5">
+                                        <div className="flex justify-start items-center gap-5 py-2">
                                             <div>
                                                 <StarRatings
                                                     rating={parseInt(item.rating)}
@@ -66,8 +66,8 @@ const MyCart = () => {
                                             </div>
                                         </div>
 
-                                        <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed text-gray-700">
-                                            <span>Description:</span> {item.discription}
+                                        <p class="block mb-8 font-sans text-base antialiased font-normal leading-relaxed ">
+                                            <span className='text-base font-semibold'>Description :</span> {item.discription}
                                         </p>
 
                                         <div>
