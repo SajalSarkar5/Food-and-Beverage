@@ -86,7 +86,7 @@ const MyCart = () => {
 
                             })
                         }
-                    </div> : <div><p>No data acced card</p></div>
+                    </div> : <div className="my-20"><p className="text-white text-3xl text-center font-semibold">No data acced card</p></div>
                 }
             </div>
         </div>
