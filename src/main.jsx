@@ -12,6 +12,7 @@ import ErrorPage from './pages/ErrorPage';
 import SameBrandDetails from './pages/SameBrandDetails';
 import MoreDetails from './pages/MoreDetails';
 import UpdedCard from './pages/UpdedCard';
+import Login from './pages/Login';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
     element: <UpdedCard></UpdedCard>,
     loader: ({ params }) => fetch(`http://localhost:5000/upded/${params.id}`)
   },
+  {
+    path: "/login",
+    element: <Login></Login>
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
