@@ -36,9 +36,7 @@ const Register = () => {
             return
         }
         if (!isValidSpacialPassword) {
-            // alert('PLease provide special character')
             swal("PLease provide special character !", "error");
-            // toast.error("PLease provide special character")
             return
         }
 
