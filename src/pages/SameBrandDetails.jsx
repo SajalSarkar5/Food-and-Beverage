@@ -35,9 +35,7 @@ const SameBrandDetails = () => {
 
                                     <div>
 
-
-
-                                    </div>
+                                </div>
 
                                 </div>
 
