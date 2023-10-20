@@ -14,6 +14,8 @@ import MoreDetails from './pages/MoreDetails';
 import UpdedCard from './pages/UpdedCard';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import AuthProvider from './providers/AuthProvider';
+import PrivateRoute from './pages/PrivateRoute';
 
 const router = createBrowserRouter([
   {
@@ -23,25 +25,25 @@ const router = createBrowserRouter([
   },
   {
     path: "/product",
-    element: <AddProduct></AddProduct>
+    element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
   },
   {
     path: "/cart",
-    element: <MyCart></MyCart>
+    element: <PrivateRoute><MyCart></MyCart></PrivateRoute>
   },
   {
     path: "/branddetails/:id",
-    element: <SameBrandDetails></SameBrandDetails>,
+    element: <PrivateRoute><SameBrandDetails></SameBrandDetails></PrivateRoute>,
     loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`)
   },
   {
     path: "/moredetails/:id",
-    element: <MoreDetails></MoreDetails>,
+    element: <PrivateRoute><MoreDetails></MoreDetails></PrivateRoute>,
     loader: ({ params }) => fetch(`http://localhost:5000/single/${params.id}`)
   },
   {
     path: "/updeddetails/:id",
-    element: <UpdedCard></UpdedCard>,
+    element: <PrivateRoute><UpdedCard></UpdedCard></PrivateRoute>,
     loader: ({ params }) => fetch(`http://localhost:5000/upded/${params.id}`)
   },
   {
@@ -56,6 +58,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )

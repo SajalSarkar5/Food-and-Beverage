@@ -1,8 +1,15 @@
 
 import { Link } from 'react-router-dom';
 import Header from '../components/Header';
+import { useContext } from 'react';
+import { AuthContext } from '../providers/AuthProvider';
+import toast from 'react-hot-toast';
+import GoogleLogin from '../components/GoogleLogin';
+
 
 const Register = () => {
+
+    const { createUser } = useContext(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -13,6 +20,37 @@ const Register = () => {
         const email = form.get('email');
         const password = form.get('password');
         console.log(name, photo, email, password);
+
+        const isValidCarPassword = /^(?=.*[A-Z]).+$/.test(password);
+        const isValidSpacialPassword = /^(?=.*[A-Z])(?=.*[^A-Za-z0-9]).+$/.test(password);
+
+        if (password.length < 6) {
+            alert('PLease provide 6 character password')
+            // toast.error("PLease provide 6 character password")
+            return
+        }
+
+        if (!isValidCarPassword) {
+            alert('PLease provide capital letter')
+            // toast.error("PLease provide capital letter")
+            return
+        }
+        if (!isValidSpacialPassword) {
+            alert('PLease provide special character')
+            // toast.error("PLease provide special character")
+            return
+        }
+
+
+
+
+        createUser(email, password)
+        .then(result => {
+            navigate('/')
+        })
+        .catch(error => {
+            console.error(error)
+        })
     }
 
 
@@ -57,7 +95,7 @@ const Register = () => {
                                 <button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 border-0 text-[#cae9ff] capitalize">Register</button>
                             </div>
                         </form>
-                        {/* <div className="w-3/4 mx-auto"><GoogleLogin></GoogleLogin></div> */}
+                        <div className="w-3/4 mx-auto"><GoogleLogin></GoogleLogin></div>
                         <p className="text-center pb-4 text-[#cae9ff]">Already have an account? <Link to="/login"><span className="text-cyan-400">Login</span></Link></p>
                     </div>
                 </div>

@@ -1,14 +1,33 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import { useContext } from "react";
+import { AuthContext } from "../providers/AuthProvider";
+import GoogleLogin from "../components/GoogleLogin";
 
 
 const Login = () => {
+    const {signIn} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log('location in the login page', location)
 
     const handleLogin = e => {
         e.preventDefault();
         console.log(e.currentTarget)
         const form = new FormData(e.currentTarget);
-        console.log(form.get('password'));
+        const email = form.get('email');
+        const password = form.get('password');
+        console.log(email, password);
+        signIn(email, password)
+        .then(result => {
+            console.log(result.user);
+
+                navigate(location?.state ? location.state : '/');
+
+        })
+        .catch(error => {
+            console.error(error);
+        })
     }
 
 
@@ -42,7 +61,7 @@ const Login = () => {
                                 <button className="btn bg-gradient-to-r from-sky-500 to-indigo-500 border-0 text-[#cae9ff] capitalize">Login</button>
                             </div>
                         </form>
-                        {/* <div className="w-3/4 mx-auto"><GoogleLogin></GoogleLogin></div> */}
+                        <div className="w-3/4 mx-auto"><GoogleLogin></GoogleLogin></div>
                         <p className="text-center pb-4 text-[#cae9ff]">Don't have an account? <Link to="/register"><span className="text-cyan-400">Register</span></Link></p>
                     </div>
                 </div>
