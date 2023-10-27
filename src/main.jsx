@@ -34,17 +34,17 @@ const router = createBrowserRouter([
   {
     path: "/branddetails/:id",
     element: <PrivateRoute><SameBrandDetails></SameBrandDetails></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/brand/${params.id}`)
+    loader: ({ params }) => fetch(`https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/brand/${params.id}`)
   },
   {
     path: "/moredetails/:id",
     element: <PrivateRoute><MoreDetails></MoreDetails></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/single/${params.id}`)
+    loader: ({ params }) => fetch(`https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/single/${params.id}`)
   },
   {
     path: "/updeddetails/:id",
     element: <PrivateRoute><UpdedCard></UpdedCard></PrivateRoute>,
-    loader: ({ params }) => fetch(`http://localhost:5000/upded/${params.id}`)
+    loader: ({ params }) => fetch(`https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/upded/${params.id}`)
   },
   {
     path: "/login",

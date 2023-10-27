@@ -9,7 +9,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/allcard')
+        fetch('https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/allcard')
             .then(response => response.json())
             .then(json => {
                 setCard(json)
@@ -18,7 +18,7 @@ const MyCart = () => {
 
 
     const handelDelet = (id) => {
-        fetch(`http://localhost:5000/deletcard/${id}`, {
+        fetch(`https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/deletcard/${id}`, {
             method: 'DELETE',
         })
             .then((response) => response.json())

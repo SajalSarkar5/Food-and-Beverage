@@ -27,7 +27,7 @@ const AddProduct = () => {
 
         const data = { name, image, select, type, price, discription, rating }
         console.log(data)
-        fetch('http://localhost:5000/food', {
+        fetch('https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/food', {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {

@@ -25,7 +25,7 @@ const UpdedProduct = () => {
         const discription = e.target.discription.value;
         const updedData = { name, image, select, type, price, discription, rating }
 
-        fetch(`http://localhost:5000/upded/${data._id}`, {
+        fetch(`https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/upded/${data._id}`, {
             method: 'PUT',
             body: JSON.stringify(updedData),
             headers: {

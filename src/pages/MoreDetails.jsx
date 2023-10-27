@@ -9,7 +9,7 @@ const MoreDetails = () => {
 
     const handelAddCard = (data) => {
 
-        fetch('http://localhost:5000/addcard', {
+        fetch('https://food-and-beverage-server-m8xlps9v5-sarkar-sajals-projects.vercel.app/addcard', {
             method: 'POST',
             body: JSON.stringify({
                 name: data.name,
