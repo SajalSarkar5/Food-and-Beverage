@@ -1,5 +1,5 @@
 
-import StarRatings from 'react-star-ratings';
+// import StarRatings from 'react-star-ratings';
 import { Link, useLoaderData } from 'react-router-dom';
 import { Zoom } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css'
@@ -9,6 +9,7 @@ import Header from '../components/Header';
 
 const SameBrandDetails = () => {
     const data = useLoaderData()
+
     if (data.length > 0) {
         return (
             <div className='background-image'>
@@ -16,7 +17,7 @@ const SameBrandDetails = () => {
 
                 <div>
                     <Zoom scale={0.7} indicators={true}>
-                        {data.map((each, index) => (
+                        {data?.map((each, index) => (
                             <div key={index} className=' py-8'>
                                 <img className='h-[100vh] w-full' style={{ objectFit: "cover", backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }} alt="Slide Image" src={each.image} />
                             </div>
@@ -54,11 +55,11 @@ const SameBrandDetails = () => {
 
                                         <div className="flex justify-start items-center gap-5">
                                             <div>
-                                                <StarRatings
+                                                {/* <StarRatings
                                                     rating={parseInt(item.rating)}
                                                     starDimension="20px"
                                                     starSpacing="5px"
-                                                />
+                                                /> */}
                                             </div>
                                             <div>
                                                 <h5 className="text-[#cae9ff] text-base">{item.rating}</h5>

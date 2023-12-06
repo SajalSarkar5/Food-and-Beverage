@@ -3,7 +3,6 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
 import { useContext } from 'react';
 import { AuthContext } from '../providers/AuthProvider';
-import toast from 'react-hot-toast';
 import GoogleLogin from '../components/GoogleLogin';
 import swal from 'sweetalert';
 
